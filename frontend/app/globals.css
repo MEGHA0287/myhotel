@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+.custom-scrollbars::-webkit-scrollbar {
+  height: 6px;
+  width: 4px;
+}
+
+.custom-scrollbars::-webkit-scrollbar-thumb {
+  background-color: rgb(51, 46, 46);
+  
+  /* Adjust the border-radius as needed */
+  border: 10px solid rgb(51, 46, 46); /* Add a border to create a thin line */
+  border-left: none;
+}
+
+.custom-scrollbars::-webkit-scrollbar-track {
+  width: 3px;
+}
+
+/*side scrollbar*/
+.custom-sidescrollbars::-webkit-scrollbar {
+  height: 6px;
+  width: 10px;
+}
+
+.custom-sidescrollbars::-webkit-scrollbar-thumb {
+  background-color: rgb(51, 46, 46);
+  
+  /* Adjust the border-radius as needed */
+  border: 10px solid rgb(51, 46, 46); /* Add a border to create a thin line */
+}
+
+.custom-sidescrollbars::-webkit-scrollbar-track {
+  width: 3px;
+}
+
+
+
+
+
+
+
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #aadbf4;
+  
+  /* Adjust the border-radius as needed */
+  border: 1px solid #2cace8; /* Add a border to create a thin line */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  width: 3px;
+  
+}
+/* * {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+} */
+
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-only, .print-only * {
+    visibility: visible;
+  }
+  .print-only {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+
+
+
+
+/* since nested groupes are not supported we have to use
+      regular css for the nested dropdowns
+      */
+li>ul                 {transform: translatex(100%) scale(0) }
+li:hover>ul           {transform: translatex(101%) scale(1) }
+li > button svg       {transform: rotate(-90deg) }
+li:hover > button svg {transform: rotate(-270deg) }
+
+      /* Below styles fake what can be achieved with the tailwind config
+         you need to add the group-hover variant to scale and define your custom
+         min width style.
+         See https://codesandbox.io/s/tailwindcss-multilevel-dropdown-y91j7?file=/index.html
+         for implementation with config file
+      */
+      .group:hover .group-hover\:scale-100 {transform: scale(1) }
+      .group:hover .group-hover\:-rotate-180 {transform: rotate(180deg) }
+      .scale-0 {transform: scale(0) }
+      .min-w-32 {min-width: 8rem }
